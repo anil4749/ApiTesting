@@ -1,0 +1,33 @@
+[
+  {
+    "name": "Ignored tests",
+    "matchedStatuses": ["skipped"]
+  },
+  {
+    "name": "Assertion problems",
+    "matchedStatuses": ["failed"],
+    "messageRegex": ".*assertion-failed.*"
+  },
+  {
+    "name": "Infrastructure problems",
+    "matchedStatuses": ["failed"],
+    "messageRegex": ".*Connection refused: connect.*"
+  },
+  {
+    "name": "No host found problems",
+    "matchedStatuses": ["failed"],
+    "traceRegex": ".*No such host is known.*"
+  },
+  {
+    "name": "Test defects",
+    "matchedStatuses": ["broken"]
+  },
+  {
+    "name": "Product defects",
+    "matchedStatuses": ["unknown"]
+  },
+  {
+    "name": "Passed tests",
+    "matchedStatuses": ["passed"]
+  }
+]

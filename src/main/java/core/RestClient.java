@@ -3,6 +3,7 @@ package core;//
 import com.github.dzieciou.testing.curl.CurlHandler;
 import com.github.dzieciou.testing.curl.CurlRestAssuredConfigFactory;
 import com.github.dzieciou.testing.curl.Options;
+import io.qameta.allure.Allure;
 import io.restassured.RestAssured;
 import io.restassured.config.EncoderConfig;
 import io.restassured.config.RestAssuredConfig;
@@ -67,27 +68,28 @@ public class RestClient {
         Response res;
         switch (request.toUpperCase()) {
             case "GET":
-                res = requestSpecification.get(this.url, new Object[0]);
+                res = requestSpecification.get(this.url);
                 break;
             case "POST":
-                res = requestSpecification.post(this.url, new Object[0]);
+                res = requestSpecification.post(this.url);
                 break;
             case "PUT":
-                res = requestSpecification.put(this.url, new Object[0]);
+                res = requestSpecification.put(this.url);
                 break;
             case "DELETE":
-                res = requestSpecification.delete(this.url, new Object[0]);
+                res = requestSpecification.delete(this.url);
                 break;
             case "PATCH":
-                res = requestSpecification.patch(this.url, new Object[0]);
+                res = requestSpecification.patch(this.url);
                 break;
             default:
                 throw new IllegalArgumentException("Invalid http request");
         }
 
         Response response = (res.then()).extract().response();
+        curlReporting(String.valueOf(response.getStatusCode()),response);
         System.out.println("Curl --> " + this.curls.get(0));
-        System.out.println("Resp --> " +response.body().asString());
+        System.out.println("Response --> " +response.body().asString());
         return response;
     }
 
@@ -119,5 +121,11 @@ public class RestClient {
         }
 
         return reqSpec;
+    }
+
+    private void curlReporting(String statusCode, Response response) {
+        Allure.addAttachment("curl logger",curls.get(0));
+        Allure.addAttachment("response body", response.body().print());
+        Allure.addAttachment("response headers", response.headers().toString());
     }
 }

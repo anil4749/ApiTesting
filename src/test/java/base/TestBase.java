@@ -13,4 +13,7 @@ public class TestBase {
     public  String getAllBalance="/v1/reporting/balances";
     public String generateToken="/v1/identity/generate-token";
     public  String url= null;
+
+
+
 }

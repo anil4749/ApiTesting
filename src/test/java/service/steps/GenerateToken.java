@@ -31,4 +31,10 @@ public class GenerateToken extends TestBase {
         }
         return response;
     }
+
+    @Step("step 1")
+        public void step1(){
+
+        }
+
 }

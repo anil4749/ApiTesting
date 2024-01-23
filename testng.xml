@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite"><test verbose="2" preserve-order="true" name="/Users/manojb/IdeaProjects/PracticeDemo"><classes><class name="service.test.GenerateTokenTest"><methods><include name="genrateAccessToken"/></methods></class><class name="service.test.GetAllBalanceTest"><methods><include name="getAllBalance"/></methods></class></classes></test></suite>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite">
+    <listeners>
+        <listener class-name="core.TestReportListener"/>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="/Users/manojb/IdeaProjects/PracticeDemo"><classes><class name="service.test.GenerateTokenTest"><methods><include name="genrateAccessToken"/></methods></class><class name="service.test.GetAllBalanceTest"><methods><include name="getAllBalance"/></methods></class></classes></test></suite>

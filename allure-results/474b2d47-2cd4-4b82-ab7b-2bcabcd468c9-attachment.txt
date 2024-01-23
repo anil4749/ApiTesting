@@ -1,0 +1,16 @@
+Connection=keep-alive
+Content-Length=79
+Content-Type=application/json
+Server=nginx
+Cache-Control=max-age=0, no-cache, no-store, must-revalidate
+Paypal-Debug-Id=78807c3e03574
+Strict-Transport-Security=max-age=31536000; includeSubDomains
+Accept-Ranges=bytes
+Via=1.1 varnish, 1.1 varnish
+Edge-Control=max-age=0
+Date=Tue, 23 Jan 2024 18:35:03 GMT
+X-Served-By=cache-nrt-rjtf7700070-NRT, cache-fjr990020-FJR
+X-Cache=MISS, MISS
+X-Cache-Hits=0, 0
+X-Timer=S1706034904.548670,VS0,VE374
+Vary=Accept-Encoding
