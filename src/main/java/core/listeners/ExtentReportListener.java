@@ -15,7 +15,7 @@ import java.nio.file.Paths;
 import java.util.Calendar;
 import java.util.Date;
 
-import static core.factory.Factory.takeScreenshot;
+import static core.factory.PlaywrightFactory.takeScreenshot;
 
 public class ExtentReportListener implements ITestListener {
 

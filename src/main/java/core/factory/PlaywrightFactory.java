@@ -10,7 +10,7 @@ import java.nio.file.Paths;
 import java.util.Base64;
 import java.util.Properties;
 
-public class Factory {
+public class PlaywrightFactory {
 
 	Playwright playwright;
 	Browser browser;

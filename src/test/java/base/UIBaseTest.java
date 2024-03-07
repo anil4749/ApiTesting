@@ -1,7 +1,7 @@
 package base;
 
 import com.microsoft.playwright.Page;
-import core.factory.Factory;
+import core.factory.PlaywrightFactory;
 import core.pages.FlyDubai;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -12,7 +12,7 @@ import java.util.Properties;
 
 public class UIBaseTest {
 
-	Factory pf;
+	PlaywrightFactory pf;
 	Page page;
 	protected Properties prop;
 
@@ -20,7 +20,7 @@ public class UIBaseTest {
 	@Parameters({ "browser" })
 	@BeforeTest
 	public void setup(String browserName) {
-		pf = new Factory();
+		pf = new PlaywrightFactory();
 
 		prop = pf.init_prop();
 
