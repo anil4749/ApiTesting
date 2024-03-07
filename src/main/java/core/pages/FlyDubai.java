@@ -73,13 +73,7 @@ public class FlyDubai {
 			page.locator("text=27").nth(2).click();
 			// Click text=26 >> nth=1
 			page.locator("text=26").nth(1).click();
-			// Click text=Return One-way Multi-city / Stopovers + I have a promo code From Dubai All Airpo >> input[type="submit"]
-
-	//		Response response = page.waitForResponse("**/api/flights/", () -> {page.locator("text=Return One-way Multi-city / Stopovers + I have a promo code From Dubai All Airpo >> input[type=\"submit\"]").click();
-		//		});
-//		page.onRequest(request -> {
-		//	System.out.println("Method: " + response.url() + " , Url: " + response.url() );
-//
+			// Click text=Return One-way Multi-city / Stopovers + I have a promo code From Dubai All Airpo >> input[type="submit"]//
 			page.locator("text=Return One-way Multi-city / Stopovers + I have a promo code From Dubai All Airpo >> input[type=\"submit\"]").click();
 			Thread.sleep(2000);
 		}catch (Exception ignored){
@@ -130,23 +124,14 @@ public class FlyDubai {
 		Assert.assertEquals(totalAmmount,bookingTotal,"verify total ammount");
 	}
 
-	public Response getNetwokLog(String paathParames){
-		//Response response = page.waitForResponse("**/api/flights/", () -> {page.locator("Update").click();});
-		Response response;
-		List<String> url = new ArrayList<>();
-		//page.onRequest(MyClass::handleRequest);
+	public List<Response> getNetwokLog(String paathParames){
+		List<Response> response = new ArrayList<>();
 		page.onResponse(response1 -> {
-			//String str = new String(byteArray, StandardCharsets.UTF_8);
 			if (response1.url().contains(paathParames)){
+				response.add(response1);
 				System.out.println("URL: " + response1.url() + " , Response==>: " + new String(response1.body(), StandardCharsets.UTF_8));
-			//	page.onResponse(response1 -> {System.out.println("Response==>: " + response1.body());});
 			}
 		});
-return null;
-
-//
-//		page.onRequest(request -> {
-//			System.out.println("Method: " + request.url() + " , Url: " + request.url() );
-//		});
+	return response;
 	}
 }

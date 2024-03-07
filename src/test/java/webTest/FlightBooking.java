@@ -21,9 +21,4 @@ public class FlightBooking extends UIBaseTest {
 		flyDubai.reviewBooking();
 
 	}
-
-	@Test
-	public void test1(){
-
-	}
 }
