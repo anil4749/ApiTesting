@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Flight booking" thread-count="1"
+	parallel="tests" verbose="4">
+
+
+
+	<listeners>
+		<listener
+			class-name="core.listeners.ExtentReportListener" />
+
+	</listeners>
+
+	<test name="flight booking Test_chrome">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="webTest.FlightBooking" />
+		</classes>
+	</test>
+
+</suite>
