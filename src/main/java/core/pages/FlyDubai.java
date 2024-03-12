@@ -64,9 +64,8 @@ public class FlyDubai {
 	}
 @Step("Search flignt")
 	public void searchFlight(){
-		try {
 			// Click input[name="airport-destination"] >> nth=0
-			page.locator("input[name=\"airport-destination\"]").first().click();
+			page.locator("//label[@class='bookingTo-wrapper make-booking-desktop widgetFocusedOut']//input[@id='airport-destination']").first().click();
 			// Click #mCSB_2_container >> text=Colombo Airport
 			page.locator("#mCSB_2_container >> text=Colombo Airport").click();
 			// Click text=27 >> nth=2
@@ -75,9 +74,6 @@ public class FlyDubai {
 			page.locator("text=26").nth(1).click();
 			// Click text=Return One-way Multi-city / Stopovers + I have a promo code From Dubai All Airpo >> input[type="submit"]//
 			page.locator("text=Return One-way Multi-city / Stopovers + I have a promo code From Dubai All Airpo >> input[type=\"submit\"]").click();
-			Thread.sleep(2000);
-		}catch (Exception ignored){
-		}
 	}
 @Step("Select flight")
 	public void selectFlights(){
